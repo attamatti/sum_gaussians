@@ -39,6 +39,6 @@ for i in zip(means,stds,pcts):
     tstd = i[1]
     pct = i[2]
     x_values = np.linspace(tmean-(4*tstd), tmean+(4*tstd), 120)
-    plt.plot(x_values, multigaussian(x_values, zip(means,stds,pcts)),linewidth=4.0)
+    plt.plot(x_values, multigaussian(x_values, zip(means,stds,pcts)),linewidth=2.0,color='black')
     
 plt.savefig('gaussians.png')
