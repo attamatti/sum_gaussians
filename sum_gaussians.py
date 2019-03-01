@@ -9,10 +9,12 @@ import math
 
 if len(sys.argv) < 4:
     sys.exit('\nUSAGE: sum_gaussians.py <mean 1> <std 1> <height 1> ... <mean n> <std n> <height n>')
-
-means = [float(i) for i in sys.argv[1::3]]
-stds = [float(i) for i in sys.argv[2::3]]
-pcts = [float(i) for i in sys.argv[3::3]]
+try:
+    means = [float(i) for i in sys.argv[1::3]]
+    stds = [float(i) for i in sys.argv[2::3]]
+    pcts = [float(i) for i in sys.argv[3::3]]
+except:
+    sys.exit('\nUSAGE: sum_gaussians.py <mean 1> <std 1> <height 1> ... <mean n> <std n> <height n>')
 
 def gaussian(x, mu, sig,pct):
     return pct*(np.exp(-np.power(x - mu, 2.) / (2 * np.power(sig, 2.))))
